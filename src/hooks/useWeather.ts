@@ -1,22 +1,19 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import { apiUrl } from 'constants/links';
+import { apiWeatherUrl } from 'constants/links';
+import { ICoordinates } from 'types';
 
-const getWeatherByCityName = async (city: string) => {
+const getWeather = async ({ lat, lon }: ICoordinates) => {
   const { data } = await axios.get(
-    `${apiUrl}?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`,
+    `${apiWeatherUrl}?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric&exclude=minutely,hourly`,
   );
 
-  console.log(
-    'api',
-    `${apiUrl}?q=${city}&appid=${process.env.WEATHER_API_KEY}`,
-  );
   return data;
 };
 
-function useWeather(city: string) {
-  return useQuery(['weather', city], () => getWeatherByCityName(city), {
-    enabled: !!city,
+function useWeather(coordinates: ICoordinates) {
+  return useQuery(['weather', coordinates], () => getWeather(coordinates), {
+    enabled: !!coordinates,
   });
 }
 
