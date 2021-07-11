@@ -9,6 +9,7 @@ const colors = css`
     --color-primary: #096ce9;
     --color-primary-rgb: 09, 108, 233;
     --color-gray: #7a7a7a;
+    --color-error: #bc0000;
   }
 `;
 
