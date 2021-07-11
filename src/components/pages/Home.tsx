@@ -4,6 +4,7 @@ import Loader from 'components/atoms/Loader';
 import useWeather from 'hooks/useWeather';
 import { useAppDispatch } from 'store/hooks';
 import { weatherChange } from 'store/slices/weather';
+import CurrentWeather from 'components/molecules/CurrentWeather';
 
 const Home: React.FC = () => {
   const { data, error, isFetching } = useWeather('Poznań');
@@ -19,7 +20,11 @@ const Home: React.FC = () => {
   if (error)
     return <ErrorMessage>there was a problem downloading data</ErrorMessage>;
 
-  return <>test</>;
+  return (
+    <>
+      <CurrentWeather />
+    </>
+  );
 };
 
 export default Home;

@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--font-primary);
     font-size: 1.8rem;
     font-weight: 400;
+    background-color: var(--color-primary);
   }
 
   a {

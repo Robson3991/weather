@@ -16,6 +16,7 @@ export interface IWeather {
     sunrise: number;
     sunset: number;
   };
+  name: string;
   weather: Array<WeatherAPI>;
   current: {
     temp: number;
