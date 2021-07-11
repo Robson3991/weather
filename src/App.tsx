@@ -3,6 +3,8 @@ import Home from 'components/pages/Home';
 import { ThemeProvider } from 'styled-components';
 import theme from 'constants/theme';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
+import store from 'store/instance';
 
 function App() {
   const queryClient = new QueryClient();
@@ -10,8 +12,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Home />
+        <Provider store={store}>
+          <GlobalStyles />
+          <Home />
+        </Provider>
       </ThemeProvider>
     </QueryClientProvider>
   );
