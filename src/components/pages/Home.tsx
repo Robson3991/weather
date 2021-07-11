@@ -3,10 +3,7 @@ import Loader from 'components/atoms/Loader';
 import useWeather from 'hooks/useWeather';
 
 const Home = () => {
-  const { data, error, isFetching } = useWeather({
-    lat: 33.44,
-    lon: -94.04,
-  });
+  const { data, error, isFetching } = useWeather('Poznań');
 
   console.log(data);
   if (error) console.log(error);
