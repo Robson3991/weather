@@ -4,7 +4,7 @@ import { apiWeatherUrl } from 'constants/links';
 
 const getWeather = async (city: string) => {
   const { data: cityData } = await axios.get(
-    `${apiWeatherUrl}/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`,
+    `${apiWeatherUrl}/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`,
   );
 
   const { coord } = cityData;
@@ -13,7 +13,7 @@ const getWeather = async (city: string) => {
     `${apiWeatherUrl}/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric&exclude=minutely,hourly`,
   );
 
-  return data;
+  return { ...cityData, ...data };
 };
 
 function useWeather(city: string) {

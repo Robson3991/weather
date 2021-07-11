@@ -11,6 +11,12 @@ type WeatherAPI = {
 };
 
 export interface IWeather {
+  sys: {
+    country: string;
+    sunrise: number;
+    sunset: number;
+  };
+  weather: Array<WeatherAPI>;
   current: {
     temp: number;
     feels_like: number;
