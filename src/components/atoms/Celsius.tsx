@@ -11,7 +11,7 @@ const Number = styled.p<Partial<CelsiusProps>>`
 
 const Celsius: React.FC<CelsiusProps> = ({ value, size }) => (
   <Number size={size}>
-    {value}
+    {parseInt(value.toFixed())}
     <span>&#8451;</span>
   </Number>
 );

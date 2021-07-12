@@ -15,10 +15,21 @@ const CelsiusWrapper = styled.p`
   margin: 1rem 0;
 `;
 
+const CurrentMore = styled.div`
+  display: flex;
+  margin-top: 1rem;
+  color: var(--color-white);
+  font-weight: 300;
+
+  span {
+    margin: 0 5px;
+  }
+`;
+
 const CurrentWeather = () => {
   const { data } = useAppSelector((state) => state.weather);
 
-  if (!data) return <></>;
+  if (!data) return <>error</>;
 
   console.log(data);
 
@@ -33,6 +44,10 @@ const CurrentWeather = () => {
         <Celsius value={weather.current.temp} size={32} />
       </CelsiusWrapper>
       <p>{weather.weather[0].main}</p>
+      <CurrentMore>
+        <span>Feels like: {weather.current.feels_like}</span>
+        <span>Humidity: {weather.current.humidity}%</span>
+      </CurrentMore>
     </Wrapper>
   );
 };

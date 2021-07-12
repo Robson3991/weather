@@ -3,13 +3,13 @@ import type { RootState } from '../instance';
 import { IWeather } from 'types';
 
 interface WeatherState {
-  data: IWeather | [];
+  data: IWeather | null;
 }
 
 type LocalePayload = IWeather;
 
 const inistialState: WeatherState = {
-  data: [],
+  data: null,
 };
 
 const localeSlice = createSlice({

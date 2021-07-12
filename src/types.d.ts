@@ -22,6 +22,7 @@ export interface IWeather {
     temp: number;
     feels_like: number;
     weather: Array<WeatherAPI>;
+    humidity: number;
   };
   daily: [
     {
