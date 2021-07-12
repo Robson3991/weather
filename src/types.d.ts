@@ -30,7 +30,7 @@ export interface IWeather {
         day: number;
         min: number;
         max: number;
-        might: number;
+        night: number;
       };
       weather: Array<WeatherAPI>;
     },
