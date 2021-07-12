@@ -31,8 +31,6 @@ const CurrentWeather = () => {
 
   if (!data) return <>error</>;
 
-  console.log(data);
-
   const weather: IWeather = data as IWeather;
 
   return (
