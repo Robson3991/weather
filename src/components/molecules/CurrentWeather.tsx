@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 50px 0;
 `;
 
 const CelsiusWrapper = styled.p`

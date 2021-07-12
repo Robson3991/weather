@@ -24,6 +24,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.8rem;
     font-weight: 400;
     background-color: var(--color-primary);
+    margin: 0;
+    padding: 0;
   }
 
   a {

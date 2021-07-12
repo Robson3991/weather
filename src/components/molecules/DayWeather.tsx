@@ -17,6 +17,8 @@ const Wrapper = styled.div`
   color: var(--color-white);
   padding: 20px;
   background: rgba(var(--color-black-rgb), 0.1);
+  border-radius: 10px;
+  margin: 0 15px 20px 0;
 `;
 
 const Day = styled.span`

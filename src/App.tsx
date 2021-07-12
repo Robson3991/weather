@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import store from 'store/instance';
 import Container from 'components/atoms/Container';
+import Header from 'components/molecules/Header';
 
 function App() {
   const queryClient = new QueryClient();
@@ -15,6 +16,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <GlobalStyles />
+          <Header />
           <Container>
             <Home />
           </Container>

@@ -5,9 +5,9 @@ import dayjs from 'dayjs';
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  margin-top: 30px;
 `;
 
 const DailyWeather = () => {
@@ -17,18 +17,22 @@ const DailyWeather = () => {
 
   return (
     <Wrapper>
-      {data.daily.map((day, index) => (
-        <DayWeather
-          key={index}
-          day={dayjs()
-            .add(index + 1, 'day')
-            .format('DD.MM.YYYY')}
-          temp={day.temp.day}
-          description={day.weather[0].description}
-          icon={day.weather[0].icon}
-          nightTemp={day.temp.night}
-        />
-      ))}
+      {data.daily.map((day, index) => {
+        if (index < 5) {
+          return (
+            <DayWeather
+              key={index}
+              day={dayjs()
+                .add(index + 1, 'day')
+                .format('DD.MM.YYYY')}
+              temp={day.temp.day}
+              description={day.weather[0].description}
+              icon={day.weather[0].icon}
+              nightTemp={day.temp.night}
+            />
+          );
+        }
+      })}
     </Wrapper>
   );
 };
