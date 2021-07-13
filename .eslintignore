@@ -5,6 +5,9 @@
 **/out/*
 **/.next/*
 
+# build
+**/build/*
+
 .eslintrc.js
 
 tsconfig.json
