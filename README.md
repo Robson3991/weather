@@ -1,7 +1,7 @@
 # React weather app
 
-Weather app writed on react with typescript.
-Live preview - https://robson3991.github.io/weather/
+Weather app writed on react with typescript.  
+Live preview - https://robson3991.github.io/weather/  
 It based on openweather api.
 
 ## Used technologies:
@@ -9,7 +9,9 @@ It based on openweather api.
 [`React`](https://reactjs.org/)
 [`TypeScript`](https://www.typescriptlang.org/)
 [`Styled components`](https://styled-components.com/)
+[`Redux toolkit`](https://redux-toolkit.js.org/)
 [`Axios`](https://axios-http.com/)
+[`React Query`](https://react-query.tanstack.com/)
 [`eslint`](https://eslint.org/)
 [`Prettier`](https://prettier.io/)
 [`Husky`](https://typicode.github.io/husky/#/)
