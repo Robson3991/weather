@@ -2,6 +2,7 @@ import { useAppSelector } from 'store/hooks';
 import styled from 'styled-components';
 import { IWeather } from 'types';
 import Celsius from 'components/atoms/Celsius';
+import { weatherIcon } from 'constants/links';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -36,6 +37,7 @@ const CurrentWeather = () => {
 
   return (
     <Wrapper>
+      <img src={weatherIcon(weather.weather[0].icon)} />
       <p>
         {weather.name}, {weather.sys.country}
       </p>
